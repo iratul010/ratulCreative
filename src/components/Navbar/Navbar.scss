@@ -1,0 +1,103 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.7s ease;
+  display: grid;
+  grid-template-columns: minmax(15rem, auto) 1fr;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary),
+     var(--color-primary-dark)
+  );
+   
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    color: var(--color-white);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-left: 3rem;
+    @media screen and (max-width: $bp-small) {
+      font-size: 2.5rem;
+    }
+    &-code {
+      color: var(--color-secondary);
+    }
+  }
+  &__navigation {
+    justify-self: end;
+    height: 100%;
+  }
+  &__item {
+    position: relative;
+  }
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-primary-light);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 1, 0, 1) 0.2s,
+      background-color 0.1s;
+    transform-origin: center;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    width: 100%;
+    transform: scaleY(1);
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    font-size: 2rem;
+    font-weight: 700;
+    list-style: none;
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.3rem;
+    }
+
+    & > * {
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-grey-dark-3);
+    transition: color 0.3s;
+    height: 100%;
+    padding: 0 2rem;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 11;
+    @media screen and (max-width: $bp-small) {
+      padding: 0 1rem;
+    }
+    &:hover {
+      color: #c9c0c0;
+    }
+    &-code {
+      color: var(--color-grey-dark-3);
+    }
+  }
+  &__item--active .navbar__link {
+    color: var(--color-white);
+  }
+}

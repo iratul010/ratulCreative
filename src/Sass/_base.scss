@@ -1,24 +1,52 @@
- 
+// $color-primary: #c69963;
+// $color-primary-dark: #b28451;
 
+// $color-secondary: #101d2c;
+
+// $color-grey-light-1: #f9f7f6;
+// $color-grey-light-2: #aaa;
+
+// $color-grey-dark-1: #54483a;
+// $color-grey-dark-2: #6d5d4b;
+
+// $color-white: #fff;
+// $color-black: #333;
+
+// // FONT VARIABLES
+// $font-primary: "Nunito", sans-serif;
+// $font-display: "Josefin Sans", sans-serif;
+
+//*RESPONSIVE BREAKPOINT*/
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+ 
+ 
 :root {
   /* Color Variables */
-  --color-primary: #c69963;         
-  --color-primary-dark: #b28451;    
-  --color-secondary: #101d2c;       
+
+  --color-primary: #101d2c;
+  --color-primary-light: #3c4b5c;
+  --color-primary-dark: #000a14;
+  --color-secondary: #7e642d;
 
   /* Grey Tones */
-  --color-grey-light-1: #f9f7f6;   
-  --color-grey-light-2: #aaa;     
-  --color-grey-dark-1: #54483a;     
-  --color-grey-dark-2: #6d5d4b;     
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
 
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
   /* Basic Colors */
-  --color-white: #fff;             
-  --color-black: #333;             
+  --color-white: #fff;
+  --color-black: #333;
 
   /* Font Variables */
-  --font-primary: "Nunito", sans-serif;        
-  --font-display: "Josefin Sans", sans-serif;  
+  --font-primary: "Nunito", sans-serif;
+  --font-display: "Josefin Sans", sans-serif;
 
   /* Responsive Breakpoints */
   --bp-largest: 75em; /* 1200px, large screens */
@@ -36,31 +64,29 @@
   box-sizing: inherit; /* Inherit box-sizing to include padding and border in element's total width and height */
 }
 
- 
 html {
-  box-sizing: border-box;  
-  font-size: 62.5%; // (10px/16px)*100 = 62.5% -> 1rem = 10px
-
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: black;
   @media screen and (max-width: var(--bp-largest)) {
-    font-size: 50%; 
+    font-size: 50%;
   }
 }
 
 /* Base Body Styling */
 body {
-  font-family: var(--font-primary); 
-  color: var(--color-grey-dark-2);   
-  font-weight: 300;               
-  line-height: 1.6;                 
+  font-family: var(--font-primary);
+  color: var(--color-grey-dark-2);
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 /* Grid Layout for Container */
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-   //1140/8=142.5 === 14rem; 1rem=10px(62.5%= 62.5/100=0.625*16)
   grid-template-columns:
-    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [full-start] minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
 }

@@ -1,3 +1,20 @@
 //BASE 
 @import 'base';
  
+//Home
+@import '../pages/Home.scss';
+//PageNotFound
+@import '../pages/PagenotFound.scss';
+//Navbar 
+@import '../components/Navbar/Navbar.scss';
+//Header 
+@import '../components/Header/Header.scss';
+//OwnImg 
+@import '../components/OwnImg/OwnImg.scss';
+//Work 
+@import '../components/Work/Work.scss';
+//About 
+@import '../components/About/About.scss';
+//Footer
+@import '../components/Footer/Footer.scss';
+ 
