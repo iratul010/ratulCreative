@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const navbar = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleItemClick = (index) => {
@@ -11,24 +11,30 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+  
       if (scrollTop > lastScrollY) {
+   
+        
         navbar.current.style.top = "-70px"; 
       } else {
+     
+       
         navbar.current.style.top = "0";
       }
       setLastScrollY(scrollTop);
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
   return (
-    <header ref={navbar} className="navbar">
+    <header ref={navbar} className="navbar"  >
       <div className="navbar__logo">
         <span className="navbar__logo-code">{"<"}</span>Ratul
         <span className="navbar__logo-code">{"/>"}</span>

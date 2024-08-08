@@ -1,0 +1,64 @@
+.timeline {
+  position: absolute;
+  content: "";
+  top: 34em;
+  left: 25em;
+  bottom: 0;
+  width: 2px;
+ &{
+  
+  @media screen and (max-width: $bp-large) {
+    top: 35em;
+    left: 14em;
+   
+  }
+  @media screen and (max-width: $bp-small) {
+    top:  10em;
+  }
+}
+}
+
+.child {
+  position: relative;
+  height: 100%;
+  background-color: var(--color-secondary);
+  width: 2px;
+}
+
+.start {
+  position: absolute;
+  top: -1.1em;
+  left: -0.6em;
+  font-size: 2rem;
+  z-index: 1;
+  color: var(--color-secondary);
+}
+
+.scroll {
+  position: absolute;
+  top: 15em;
+  left: -0.5em;
+  font-size: 2em;
+  color: var(--color-grey-light-4);
+}
+
+.scroll-text {
+  position: absolute;
+  top: 25em;
+  left: -1.7em;
+  font-size: 1.5em;
+  transform: rotate(-90deg);
+  color: var(--color-grey-dark-3);
+  text-shadow: 0 3px 14px #181619, 0 -3px 14px #181619, 3px 0 14px #181619,
+    -3px 0 14px #181619, 0 3px 6px #181619, 0 -3px 6px #181619,
+    3px 0 6px #181619, -3px 0 6px #181619;
+
+  /* নিচের দিকে বড় ছায়া */
+  /* উপরের দিকে বড় ছায়া */
+  /* ডান দিকে বড় ছায়া */
+  /* বাম দিকে বড় ছায়া */
+  /* নিচের দিকে ছোট ছায়া */
+  /* উপরের দিকে ছোট ছায়া */
+  /* ডান দিকে ছোট ছায়া */
+  /* বাম দিকে ছোট ছায়া */
+}

@@ -1,0 +1,21 @@
+.workSection{
+  height: 100vh;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+ 
+  overflow: hidden;
+  background-color: var(--color-primary);
+ 
+
+  // @media screen and (max-width: $bp-large) {
+  //   padding-left: 13rem;
+  // }
+  // @media screen and (max-width: $bp-small) {
+  //   margin-left: -5rem;
+  //   grid-template-rows: 60% 30%;
+  // }
+}
