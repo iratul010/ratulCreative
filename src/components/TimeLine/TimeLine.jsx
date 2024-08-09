@@ -1,5 +1,6 @@
 import { GiBurningDot } from "react-icons/gi";
 import { CgMouse } from "react-icons/cg";
+ 
 
 
 const TimeLine = () => {
@@ -11,6 +12,8 @@ const TimeLine = () => {
         
         </div>
         <p className="scroll-text">SCROLL</p>
+        <div className="bullet"> 
+        </div>
        </div>
     </div>
   );

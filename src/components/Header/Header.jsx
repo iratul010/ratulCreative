@@ -7,7 +7,7 @@ const Header = () => {
           <span className="header__content--info-cover-1"></span>
           <p className="header__content--info-start">
     
-             {`<Start> `}  
+             {`<Start/> `}  
           </p>
         </div>
         <br />
