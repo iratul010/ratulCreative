@@ -2,7 +2,7 @@
   position: absolute;
   content: "";
   top: 34em;
-  left: 25em;
+  left: 30em;
   bottom: 0;
   width: 2px;
  &{
@@ -14,7 +14,7 @@
   }
   @media screen and (max-width: $bp-small) {
     top:  10em;
-    left: 10em;
+    left: 5em;
   }
 }
 }
@@ -63,7 +63,7 @@
   /* ডান দিকে ছোট ছায়া */
   /* বাম দিকে ছোট ছায়া */
 }
-.bullet {
+.bullet--1 {
   position: absolute;
   top: 75em;
   left: -0.5em;
@@ -80,7 +80,49 @@
     top:  65em;
    }
   @media screen and (max-width: $bp-small) {
-    top:  55em;
+    top:  70em;
+ 
+  }
+}
+.bullet--2 {
+  position: absolute;
+  top: 255em;
+  left: -0.5em;
+  background-color: #1b191e;
+  border: 2px solid #5918df;
+  border-radius: 50%;
+  height: 1.3rem;
+  width: 1.3rem;
+ 
+  @media screen and (max-width:$bp-largest) {
+    top: 200em;
+   }
+  @media screen and (max-width:$bp-medium) {
+    top: 215em;
+   }
+  @media screen and (max-width: $bp-small) {
+    top: 170em;
+ 
+  }
+}
+.bullet--3 {
+  position: absolute;
+  top: 354em;
+  left: -0.5em;
+  background-color: #1b191e;
+  border: 2px solid #5918df;
+  border-radius: 50%;
+  height: 1.3rem;
+  width: 1.3rem;
+ 
+  @media screen and (max-width:$bp-largest) {
+    top: 298em;
+   }
+  @media screen and (max-width:$bp-medium) {
+    top: 215em;
+   }
+  @media screen and (max-width: $bp-small) {
+    top: 270em;
  
   }
 }

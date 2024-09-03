@@ -3,6 +3,7 @@ import { fetchProjectsAsync } from "./projectsAPI";
 
 const initialState = {
   projects: [],
+  selectedIndex: null,
   status: "idle",
   isLoading: false,
   error: null,
@@ -11,7 +12,11 @@ const initialState = {
 const projectsSlice = createSlice({
   initialState,
   name: "projects",
-  reducers: {},
+  reducers: {
+    setIndex:(state,action)=>{
+      state.selectedIndex = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProjectsAsync.pending, (state) => {
@@ -23,7 +28,7 @@ const projectsSlice = createSlice({
       .addCase(fetchProjectsAsync.fulfilled, (state,action) => {
         state.status = "succeeded";
         state.isLoading = false;
-        state.projects = action.payload;
+        state.projects = action.payload.projects;
       })
       .addCase(fetchProjectsAsync.rejected, (state, action) => {
         state.status = "failed";
@@ -32,4 +37,5 @@ const projectsSlice = createSlice({
       });
   },
 });
+export const { setIndex } = projectsSlice.actions;
 export default projectsSlice.reducer;

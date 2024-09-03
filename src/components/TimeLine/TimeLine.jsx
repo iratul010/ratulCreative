@@ -12,7 +12,11 @@ const TimeLine = () => {
         
         </div>
         <p className="scroll-text">SCROLL</p>
-        <div className="bullet"> 
+        <div className="bullet--1 project"> 
+        </div>
+        <div className="bullet--2 about"> 
+        </div>
+        <div className="bullet--3 contact"> 
         </div>
        </div>
     </div>

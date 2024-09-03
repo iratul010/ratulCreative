@@ -7,6 +7,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
       throw new Error('failed to fetch projects')
      }
      const data = await response.json()
+     
      return data 
   }
  )

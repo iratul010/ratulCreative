@@ -1,0 +1,216 @@
+.modal {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+
+  &__content {
+    @include absCenter;
+    width: 80vw;
+    height: 80vh;
+    background: linear-gradient(
+      to right bottom,
+      rgb(38, 75, 105),
+      rgb(57, 28, 66)
+    );
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(20px);
+    @media screen and (max-width: $bp-large) {
+    
+      width: 90vw;
+     
+    }
+    @media screen and (max-width: $bp-small) {
+      flex-direction: column-reverse;
+      width: 90%;
+      height: 100vh;
+    }
+  }
+  &__left,
+  &__right {
+    flex: 1;
+   
+  }
+  &__left {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    z-index: 11;
+    @media screen and (max-width: $bp-small) {
+      width: 100%;
+   
+    }
+  }
+  &__img {
+    width: 55%;
+    height: 35%;
+    position: absolute;
+    border-radius: 5%;
+    box-shadow: 0 1.5rem 4rem rgba(#68479cb0, 0.4);
+    transition: all 0.4s;
+    outline-offset: 1rem;
+    @media screen and (max-width: $bp-small) {
+       
+      outline-offset: .5rem;
+    }
+  }
+  &__img--p1 {
+    top: 25%;
+    left: 2rem;
+    transform: rotate(-7deg);
+  }
+  &__img--p2 {
+    top: 30%;
+    right: 2rem;
+    transform: rotate(7deg);
+  }
+  &__img--p3 {
+    top: 45%;
+    left: 20%;
+  }
+  &__img:hover {
+    z-index: 20;
+    transform: scale(1.2) translateY(-0.5rem); //hover আগের transform মান মুছে যাবে এবং শুধুমাত্র নতুন মানগুলো কার্যকর হবে
+    outline: 0.5rem solid rgba(107, 72, 153, 0.733);
+    box-shadow: 0 2.5rem 4rem rgba(var(--color-primary), 0.5);
+    @media screen and (max-width: $bp-small) {
+      transform: scale(1.05) translateY(-2.5rem);
+      outline: 0.3rem solid rgba(107, 72, 153, 0.733);
+   }
+  }
+  &__right {
+    width: 50%;
+    height: 100%;
+    background-color: #0e0c16;
+    position: relative;
+    @media screen and (max-width: $bp-small) {
+      width: 100%;
+    }
+  }
+  &__techList {
+    margin-top: 10%;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-right: 6rem;
+    @media screen and (max-width: $bp-largest) {
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media screen and (max-width: $bp-small) {
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+  }
+  &__techList li {
+     
+    font-size: 1.4rem;
+    list-style: none;
+    color: var(--color-grey-light-4);
+ 
+  }
+  &__heading {
+    font-size: 1.8rem;
+    color: var(--color-grey-light-3);
+    text-shadow: 5px 5px 10px rgba(17, 49, 192, 0.753);
+    border-bottom: 2px solid;
+    width: 16rem;
+    padding: 0 1rem ;
+    padding-left: 0;
+    margin-left: 5%;
+    margin-top: 5%;
+    @media screen and (max-width: $bp-small) {
+      margin-top: 1.5rem;
+      font-size: 1.6rem;
+   }
+  }
+  &__project--info {
+    margin-top: 1.5rem;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    color: #fff;
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid var(--color-grey-dark-2);
+    hyphens: auto;
+    @media screen and (max-width: $bp-largest) {
+      column-count: auto;
+   }
+    @media screen and (max-width: $bp-small) {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      column-count: auto;
+   }
+  }
+  &__button {
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    
+    @media screen and (max-width: $bp-small) {
+      padding: .5rem 1rem;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+   }
+  }
+  &__bottom--style {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 2rem;
+    @media screen and (max-width: $bp-small) {
+     bottom: 1rem;
+   }
+  }
+
+  .style--one {
+    margin-left: 5%;
+    width: 70%;
+    height: 0.3rem;
+    background-color: #c3b3e4;
+  }
+  .style--two {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+  &__closed {
+    top: 3rem;
+    right: 3rem;
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: block;
+    &:hover {
+      color: var(--color-secondary);
+      transform: scale(1.5);
+    }
+    @media screen and (max-width: $bp-small) {
+      top: 2rem;
+      font-size: 1.6rem;
+    }
+  }
+  &__button {
+    padding: 1.4rem 2.5rem;
+    border-radius: 5%;
+    background-color: var(--color-secondary);
+    color: #fff;
+    display: block;
+    border: none;
+    transition: all 0.2s;
+    &:hover {
+      box-shadow: 1px 3px 25px 2px rgba(146, 139, 139, 0.397);
+    }
+  }
+}

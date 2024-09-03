@@ -21,7 +21,7 @@
     padding-left: 13rem;
   }
   @media screen and (max-width: $bp-small) {
-    margin-left: -5rem;
+    margin-left: -14rem;
     grid-template-rows: 60% 30%;
   }
   &__content {
@@ -31,10 +31,12 @@
      
     @media screen and (max-width: $bp-large) {
       grid-column: col-start / col-end 5;
+   
       
     }
     @media screen and (max-width: $bp-small) {
       grid-column: col-start / full-end;
+      margin-top: 6rem;
       margin-bottom: 0;
  
     }
@@ -71,7 +73,7 @@
     }
 
     .header__content--info-start {
-      animation-delay: 2s;
+      animation-delay: 1.9s;
       font-size: 1.9rem;
       font-family:Roboto Condensed, Lato, Arial, sans-serif !important;
       font-weight: 200;
@@ -87,11 +89,11 @@
     }
 
     .header__content--info-profession {
-      animation-delay: .5s;
+      animation-delay: 1s;
     }
 
     .header__content--info-description {
-      animation-delay: 1s;
+      animation-delay: 1.2s;
      font-family: Roboto Condensed, Lato, Arial, sans-serif !important;
     }
     @keyframes revealText {
@@ -111,16 +113,17 @@
       left: -100%;
       height: 100%;
       width: 100%;
-      transform: translateX(calc(100% + 1px));
+     
       opacity: 0;
       background: #5918df;
       animation-name: coverSlide;
-      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-duration: 1.3s;
       animation-timing-function: cubic-bezier(.65,.05,.36,1);
       z-index: 1;
     }
     .header__content--info-cover-1 {
-      animation-delay: 2s;
+      animation-delay: 1.5s;
     }
     .header__content--info-cover-2 {
       animation-delay: .2s;
@@ -134,12 +137,12 @@
     @keyframes coverSlide {
       0% {
         left: -100%;
-        width: 100%;
+        transform: translateX(0%);
         opacity: 1;
       }
       100% {
         left: 100%;
-        width: 100%;
+        transform: translateX(calc(100% + 1px));
         opacity: 1;
       }
     }
