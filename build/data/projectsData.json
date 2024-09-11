@@ -1,0 +1,69 @@
+{
+  "projects": [
+    {
+      "projectId": 1,
+      "title": "Portfolio Website",
+      "thumbnail": "/src/assets/projects/projectOne/project1st.png",
+      "liveDemoLink": "https://ratul-islam-site.netlify.app/",
+      "repositoryLinks": {
+        "client": "",
+        "server": ""
+      },
+      "technologiesUsed": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "gallery": [
+        "/src/assets/projects/projectOne/one.png",
+        "/src/assets/projects/projectOne/two.png",
+        "/src/assets/projects/projectOne/three.png"
+      ],
+      "projectDetails":""
+    },
+    {
+      "projectId": 2,
+      "title": "E-commerce Platform",
+      "thumbnail": "/src/assets/projects/projectTwo/project2nd.png",
+      "liveDemoLink": "https://mobiles-zone.web.app/",
+      "repositoryLinks": {
+        "client": "https://github.com/iratul010/phone-zone-client",
+        "server": "https://github.com/iratul010/phone-zone-server"
+      },
+      "technologiesUsed": [
+        "React",
+        "Tailwind CSS",
+        "Firebase",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "gallery": [
+        "/src/assets/projects/projectTwo/one.png",
+        "/src/assets/projects/projectTwo/Two.png",
+        "/src/assets/projects/projectTwo/Three.png"
+      ]
+    },
+    {
+      "projectId": 3,
+      "title": "Online Food Ordering Platform",
+      "thumbnail": "/src/assets/projects/projectThree/project3rd.png",
+      "liveDemoLink": "https://example.com/taskmanager",
+      "repositoryLinks": {
+        "client": "https://github.com/user/taskmanager-client",
+        "server": "https://github.com/user/taskmanager-server"
+      },
+      "technologiesUsed": [
+        "React",
+        "Tailwind CSS",
+        "Firebase",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "gallery": []
+    }
+  ]
+}
