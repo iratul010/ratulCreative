@@ -95,7 +95,7 @@ const Navbar = () => {
             onClick={() => handleItemClick(4)}
           >
             <a
-              href="/public/resume/Ratul Islam.pdf"
+              href="../../localHostData/resume/Ratul Islam.pdf"
               className="navbar__link"
               download
             >
