@@ -32,10 +32,11 @@ $bp-small: 37.5em; //600px
   --font-display: "Josefin Sans", sans-serif;
 
   /* Responsive Breakpoints */
-  --bp-largest: 75em; /* 1200px, large screens */
-  --bp-large: 62.5em; /* 1000px, medium-large screens */
-  --bp-medium: 50em; /* 800px, medium screens */
-  --bp-small: 37.5em; /* 600px, small screens */
+  --bp-largest: 75em; /* 1200px, বড় পিসি, বড় ডেস্কটপ */
+  --bp-large: 62.5em; /* 1000px, ছোট ডেস্কটপ, বড় ট্যাবলেট */
+  --bp-medium: 50em; /* 800px, ট্যাবলেট, মিডিয়াম স্ক্রীন মোবাইল */
+  --bp-small: 37.5em; /* 600px, মোবাইল, ছোট স্ক্রীন Android */
+  
 }
 
 /* Reset and Box-Sizing */

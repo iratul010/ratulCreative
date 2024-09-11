@@ -46,7 +46,7 @@ const Header = () => {
       <div className="header-right">
         <img
           className="header-right-img"
-          src="/src/assets/images/ratul.png"
+          src="./src/assets/images/ratul.png"
           alt="Own Image"
         />
       </div>

@@ -1,60 +1,55 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navbar = useRef(null);
-  const location = useLocation();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [lastScrollY, setLastScrollY] = useState(0);
+ 
+  const [activeIndex, setActiveIndex] = useState(() => {
+    // Retrieve active index from localStorage on component mount
+    const savedIndex = localStorage.getItem('activeIndex');
+    return savedIndex ? parseInt(savedIndex, 10) : 0;
+  });
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
+    localStorage.setItem('activeIndex', index); // Save the active index to localStorage
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollY) {
-        navbar.current.style.top = "-70px";
-      } else {
-        navbar.current.style.top = "0";
-      }
-      setLastScrollY(scrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
-
-  useEffect(() => {
-    // Smooth scroll to target element if URL hash is present
-    if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-
-    
-  }, [location]);
  
-  useEffect(()=>{
+  useEffect(() => {
+    const navbarLinks = document.querySelectorAll('.navbar__link, .navigation__link');
     
-    const navbarLinks = document.querySelectorAll('.navigation__link');
-    navbarLinks.forEach((link=>{
-      link.addEventListener("click",function(){
-        //all remove class
-       navbarLinks.forEach(l=> l.classList.remove('navigation__link--active'));
-       //single target class add
-       link.classList.add('navigation__link--active');
-      })
-    }))
-  },[])
+    const handleClick = (event) => {
+      // Remove 'active' class from all links
+      navbarLinks.forEach(link => link.classList.remove('navbar__link--active', 'navigation__link--active'));
+      // Add 'active' class to the clicked link
+      event.currentTarget.classList.add('navigation__link--active');
+    };
+  
+    navbarLinks.forEach((link) => {
+      link.addEventListener("click", handleClick);
+    });
+  
+    // Cleanup event listeners on component unmount
+    return () => {
+      navbarLinks.forEach(link => {
+        link.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
+  
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.navbar__link');
+    // Set active class based on activeIndex from state
+    links.forEach((link, index) => {
+      if (index === activeIndex) {
+        link.classList.add('navbar__link--active');
+      } else {
+        link.classList.remove('navbar__link--active');
+      }
+    });
+  }, [activeIndex]);
+
   return (
     <header ref={navbar} className="navbar">
       <div className="navbar__logo">
@@ -64,9 +59,7 @@ const Navbar = () => {
       <nav className="navbar__navigation" aria-label="Main navigation">
         <ul className="navbar__list">
           <li
-            className={`navbar__item  ${
-              activeIndex === 0 ? "navbar__item--active" : ""
-            }`}
+            className={`navbar__item ${activeIndex === 0 ? "navbar__item--active" : ""}`}
             onClick={() => handleItemClick(0)}
           >
             <a href="#header" className="navbar__link">
@@ -74,9 +67,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className={`navbar__item  ${
-              activeIndex === 1 ? "navbar__item--active" : ""
-            }`}
+            className={`navbar__item ${activeIndex === 1 ? "navbar__item--active" : ""}`}
             onClick={() => handleItemClick(1)}
           >
             <a href="#work" className="navbar__link">
@@ -84,9 +75,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className={`navbar__item  ${
-              activeIndex === 2 ? "navbar__item--active" : ""
-            }`}
+            className={`navbar__item ${activeIndex === 2 ? "navbar__item--active" : ""}`}
             onClick={() => handleItemClick(2)}
           >
             <a href="#about" className="navbar__link">
@@ -94,9 +83,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className={`navbar__item  ${
-              activeIndex === 3 ? "navbar__item--active" : ""
-            }`}
+            className={`navbar__item ${activeIndex === 3 ? "navbar__item--active" : ""}`}
             onClick={() => handleItemClick(3)}
           >
             <a href="#contact" className="navbar__link">
@@ -104,9 +91,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className={`navbar__item  ${
-              activeIndex === 4 ? "navbar__item--active" : ""
-            }`}
+            className={`navbar__item ${activeIndex === 4 ? "navbar__item--active" : ""}`}
             onClick={() => handleItemClick(4)}
           >
             <a
