@@ -6,12 +6,13 @@ import { setIndex } from "../../features/projects/projectsSlice";
 import Modal from "../Modal/Modal";
 
 const Work = () => {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { projects, status, isLoading, error } = useSelector(
     (state) => state.projects
   );
-
+ 
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchProjectsAsync());

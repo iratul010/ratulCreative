@@ -49,7 +49,22 @@ const Navbar = () => {
       }
     });
   }, [activeIndex]);
+ 
+ useEffect(()=>{
+  let   lastscrollTop = 0;
+  let navbarHeader = navbar.current;
+  window.addEventListener("scroll",()=>{
+    let scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+    if(scrollTop>lastscrollTop){
+      navbarHeader.style.top="-100px";
 
+    }else{
+      navbarHeader.style.top='0';
+
+    }
+    lastscrollTop = scrollTop;
+  })
+ },[])
   return (
     <header ref={navbar} className="navbar">
       <div className="navbar__logo">
